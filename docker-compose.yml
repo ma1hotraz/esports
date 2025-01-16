@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "${PORT:-3000}:3000"
+    depends_on:
+      - redis
+      # - mariadb
+    env_file:
+      - .env
+    restart: always
+    volumes:
+      - ./logs/:/app/logs/
+    environment:
+      - LOG_LEVEL=debug
+      - ENV=${ENV:-prod}
+      - REDIS_HOST=redis:6379
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - DISCORD_CHANNEL=${DISCORD_CHANNEL}
+      - DB_USERNAME=esportsdifference_admin
+      - DB_PASSWORD=JaneDoe123!
+      - DB_HOST=postgresql-183039-0.cloudclusters.net
+      - DB_PORT=10046
+      - DB_NAME=esportsdifference
+
+  redis:
+    image: redis
+    restart: always
+
+  # mariadb:
+  #   image: mariadb:latest
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: esportsdifference
+  #     MYSQL_USER: root
+  #     MYSQL_PASSWORD: root
+  #   # ports:
+  #   #   - "3306:3306"
+  #   volumes:
+  #     - mariadbdataprod:/var/lib/mysql
+
+volumes:
+  mariadbdataprod:

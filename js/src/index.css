@@ -1,0 +1,165 @@
+.main-navbar {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--rs-gray-200);
+  min-height: 100vh;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 18px 18px 18px 56px;
+  font-size: 16px;
+  font-weight: bold;
+  height: 56px;
+  background: var(--rs-primary-700);
+  color: var(--rs-gray-50);
+  white-space: nowrap;
+}
+
+.nav-item-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  background: var(--rs-gray-100);
+  padding: 18px;
+}
+
+.page-title {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: bold;
+  min-width: 50px;
+}
+
+.main-content {
+  padding: 5px 5px 18px 18px;
+}
+
+.refresh-btn,
+.subnav-btn,
+.nav-tag {
+  background-color: var(--rs-primary-700);
+}
+
+.data-table {
+  min-width: 100%;
+}
+
+.table-container {
+  height: 100%;
+}
+
+.highlighted-cell .rs-table-cell-content {
+  padding: 10px;
+}
+
+.data-highlighted-orange {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rs-gray-0);
+  background-color: var(--rs-color-orange);
+  max-width: 50px;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.combo-line {
+  background-color: var(--rs-red-700);
+}
+
+.data-highlighted-orange .combo-line {
+  background-color: var(--rs-red-700);
+}
+
+.data-highlighted-green {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rs-gray-0);
+  background-color: var(--rs-color-green);
+  max-width: 50px;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.data-highlighted-none {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50px;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.custom-scroll-container {
+  max-height: calc(100vh - 79px);
+}
+
+.slips-panel .rs-panel-header,
+.slips-panel .rs-panel-body {
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+.slips-table-no-header .rs-table-row-header .rs-table-cell-content {
+  display: none;
+}
+
+.table-checkbox-cell .rs-table-cell-content {
+  display: flex;
+  align-items: center;
+}
+
+.table-checkbox-cell .rs-checkbox-checker {
+  padding: 0;
+}
+
+.used-row .data-highlighted-green {
+  background-color: var(--rs-gray-300);
+  color: var(--rs-gray-0);
+}
+
+.used-row .data-highlighted-orange {
+  background-color: var(--rs-orange-200);
+  color: var(--rs-gray-0);
+}
+
+.used-row .combo-line {
+  background-color: var(--rs-red-200);
+  color: var(--rs-gray-0);
+}
+
+.used-row {
+  color: var(--rs-gray-400) !important;
+}
+
+.header-controls {
+  text-align: right;
+}
+
+.header-controls .rs-btn {
+  margin-left: 5px;
+}
+
+.new-row .rs-table-cell {
+  background-color: var(--rs-green-50);
+}
+
+.floating-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000; /* Ensure it is above other elements */
+}
+section.rs-container.rs-container-has-sidebar {
+  height: 100vh;
+}

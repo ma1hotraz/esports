@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis
+    ports: 
+      - "6379:6379"
+    restart: always
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: esportsdifference
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3336:3306"
+    volumes:
+      - mariadbdata:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mariadb
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8880:80"
+    depends_on:
+      - mariadb
+
+  postgres:
+    image: postgres:17.2-alpine3.21
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: esportsdifference
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+
+volumes:
+  mariadbdata:
+  postgresdata:
+
+

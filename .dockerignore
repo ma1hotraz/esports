@@ -1,0 +1,10 @@
+js/node_modules
+.air.toml
+.env.template
+.gitignore
+.envrc
+.pre-commit-config.yaml
+.dockerignore
+Dockerfile
+docker-compose*.yml
+README.md

@@ -1,0 +1,32 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "esbuild",
+			"path": "js",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: esbuild - js",
+			"detail": "pnpm run build:dev --watch"
+		},
+		{
+			"label": "Docker compose dev down",
+			"type": "shell",
+			"command": "docker compose -f docker-compose.dev.yml down",
+			"problemMatcher": []
+		},
+		{
+			"label": "Docker compose dev up",
+			"type": "shell",
+			"command": "docker compose -f docker-compose.dev.yml up -d",
+			"problemMatcher": []
+		},
+		{
+			"label": "go run main.go",
+			"type": "shell",
+			"command": "go run main.go",
+			"problemMatcher": []
+		}
+	]
+}

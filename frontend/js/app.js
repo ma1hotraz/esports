@@ -1,3 +1,4 @@
+import { renderLoginForm } from "./components/login.js";
 import { routes } from "./routes.js";
 
 // Initial state (simulating Redux state)
@@ -103,6 +104,8 @@ function renderRoute(route) {
     renderContent();
     renderNotificationBar();
     renderAutoLogout();
+  } else {
+    renderLoginPage();
   }
 }
 
